@@ -137,7 +137,8 @@ table.ctr th,table.ctr td{text-align:center}
 .how .calc{display:grid;gap:8px}
 .how .calc div{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:8px 12px}
 .how .calc b{color:var(--brand)}
-.how .eq{direction:ltr;unicode-bidi:isolate;display:inline-block;font-weight:600}
+.how .eq{direction:rtl;unicode-bidi:isolate;font-weight:600}
+.eq bdi{direction:ltr;unicode-bidi:isolate}
 
 /* simulator */
 .sim{display:grid;grid-template-columns:1fr 1fr;gap:14px}
@@ -904,7 +905,7 @@ bind(['q_list','q_tp','q_rev'],()=>{
   viz.innerHTML=h;
   const n=st.s.length;const r2=x=>Math.round(x*100)/100;
   function step(name,pct){const pos=1+(n-1)*pct,lo=Math.floor(pos),fr=r2(pos-lo),a=st.s[lo-1],b2=st.s[Math.min(lo,n-1)];
-    const E=x=>'<span class="eq">'+x+'</span>';const P=fmt(r2(pos),2).replace(/\.00$/,'');
+    const E=x=>'<span class="eq">'+x.replace(/[\d][\d.,]*%?/g,m=>'<bdi>'+m+'</bdi>')+'</span>';const P=fmt(r2(pos),2).replace(/\.00$/,'');
     let t='<b>'+name+'</b>: الترتيب = '+E('1 + ('+n+' − 1) × '+pct.toFixed(2)+' = '+P);
     if(fr===0)t+='<br>رقم صحيح، فالقيمة هي رقم '+lo+' في الترتيب = '+E(fmt(a,2)+'%');
     else t+='<br>يقع بين القيمة رقم '+lo+' وهي '+E(fmt(a,2)+'%')+' والقيمة رقم '+(lo+1)+' وهي '+E(fmt(b2,2)+'%')+'<br>القيمة = '+E(fmt(a,2)+' + '+fmt(fr,2)+' × ('+fmt(b2,2)+' − '+fmt(a,2)+') = '+fmt(a+fr*(b2-a),2)+'%');
