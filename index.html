@@ -74,7 +74,7 @@ section.mod{padding-block:56px;border-bottom:1px solid var(--line)}
 section.mod:nth-of-type(even){background:linear-gradient(180deg,var(--g50),#fff)}
 .mod-head h2{font-size:clamp(23px,3.2vw,31px);font-weight:800;color:var(--fg)}
 .mod-head .sub{color:var(--muted);font-size:15px;margin-top:2px}
-.prose{max-width:72ch;display:grid;gap:14px}
+.prose{max-width:72ch;display:grid;gap:14px;align-content:start}
 .prose strong{color:var(--fg)}
 .ref{display:inline-block;font-size:12px;color:var(--brass);border:1px solid currentColor;border-radius:5px;padding:0 7px;margin-inline-start:4px;vertical-align:2px;line-height:1.7;white-space:nowrap}
 .grid{display:grid;gap:14px}
@@ -127,6 +127,7 @@ th{background:var(--tint);font-weight:600;font-size:13.5px}
 tr:last-child td{border-bottom:0}
 td.n{direction:ltr;text-align:left}
 tr.hl td{background:var(--warn-bg)}
+table.ctr th,table.ctr td{text-align:center}
 
 /* simulator */
 .sim{display:grid;grid-template-columns:1fr 1fr;gap:14px}
@@ -188,6 +189,8 @@ tr.hl td{background:var(--warn-bg)}
 
 /* steps */
 .steps{counter-reset:s;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.steps4{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media (max-width:980px){.steps4{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:760px){.steps{grid-template-columns:1fr}}
 .steps li{list-style:none;counter-increment:s;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px 14px 16px;display:flex;gap:12px;align-items:flex-start;font-size:15px}
 .steps li::before{content:counter(s);font-family:var(--f-display);font-weight:800;color:var(--brand-ink);background:var(--brand);border-radius:50%;width:28px;height:28px;flex:none;display:grid;place-items:center;font-size:14px;line-height:1}
@@ -578,21 +581,21 @@ footer p{font-size:14px;opacity:.85}
 <!-- 07 -->
 <section class="mod" id="bench"><div class="wrap">
   <div class="mod-head"><span class="mod-num">07</span><div><h2>الدراسة المعيارية والنطاق الربيعي</h2><div class="sub">كيف نصل إلى نطاق السعر المحايد بالأرقام</div></div></div>
-  <div class="grid g2">
-    <div class="prose">
-      <p>الدراسة المعيارية خطوة أساسية للوصول إلى <strong>نطاق السعر المحايد</strong> من نتائج شركات مستقلة مقارنة، وتُستخدم فيها عادة قواعد بيانات معتمدة. وهي من أهم أجزاء الملف المحلي.</p>
-      <p>أهم خطوة تحديد النطاق واستراتيجية البحث المطابقة لأعمال الطرف المختبر، وأبرز المتغيرات <strong>النطاق الجغرافي</strong> و<strong>رمز النشاط التجاري</strong>. وقد لا تلزم قواعد البيانات إذا توفرت معلومات موثوقة كالمقارنات الداخلية.</p>
-    </div>
-    <ol class="steps" style="grid-template-columns:1fr">
-      <li>اختيار الطرف قيد الاختبار.</li>
-      <li>اختيار بيانات مناسبة وكافية للمقارنة.</li>
-      <li>اختيار معايير البحث والسنوات المغطاة.</li>
-      <li>البحث عن مقارنات داخلية مع مستقلين إن وجدت.</li>
-      <li>اختيار الأشخاص القابلين للمقارنة بشكل مناسب.</li>
-      <li>اختيار مؤشر مستوى الربح المناسب.</li>
-      <li>تحديد نطاق السعر المحايد للهوامش.</li>
-    </ol>
+  <div class="prose">
+    <p>الدراسة المعيارية خطوة أساسية للوصول إلى <strong>نطاق السعر المحايد</strong> من نتائج شركات مستقلة مقارنة، وتُستخدم فيها عادة قواعد بيانات معتمدة. وهي من أهم أجزاء الملف المحلي.</p>
+    <p>أهم خطوة تحديد النطاق واستراتيجية البحث المطابقة لأعمال الطرف المختبر، وأبرز المتغيرات <strong>النطاق الجغرافي</strong> و<strong>رمز النشاط التجاري</strong>. وقد لا تلزم قواعد البيانات إذا توفرت معلومات موثوقة كالمقارنات الداخلية.</p>
   </div>
+  <h3 class="blk mt2">خطوات إعداد الدراسة المعيارية</h3>
+  <ol class="steps steps4">
+    <li>اختيار الطرف قيد الاختبار.</li>
+    <li>اختيار بيانات مناسبة وكافية للمقارنة.</li>
+    <li>اختيار معايير البحث والسنوات المغطاة.</li>
+    <li>البحث عن مقارنات داخلية مع مستقلين إن وجدت.</li>
+    <li>اختيار الأشخاص القابلين للمقارنة بشكل مناسب.</li>
+    <li>اختيار مؤشر مستوى الربح المناسب.</li>
+    <li>تحديد نطاق السعر المحايد للهوامش.</li>
+  </ol>
+  <div class="callout mt"><b>كيف يُقرأ النطاق الربيعي؟</b> تُرتَّب هوامش الشركات المقارنة من الأصغر إلى الأكبر، ثم يُستبعد الربع الأدنى والربع الأعلى منها. ما بين <b>الربيع الأدنى</b> و<b>الربيع الأعلى</b> هو النطاق المقبول، و<b>الوسيط</b> هو القيمة التي في المنتصف.</div>
 
   <div class="tool" id="iqTool">
     <div class="tool-head"><span class="tag">حاسبة</span><h3>النطاق الربيعي: هل نتيجتك داخل النطاق؟</h3></div>
@@ -603,7 +606,7 @@ footer p{font-size:14px;opacity:.85}
         <label class="f">الإيرادات (لحساب أثر التعديل)<input type="number" id="q_rev" value="50000000"></label>
       </div>
       <div class="rangeviz" id="q_viz" aria-hidden="true"></div>
-      <div class="tbl"><table style="min-width:0"><thead><tr><th>الحد الأدنى</th><th>الربيع الأدنى</th><th>الوسيط</th><th>الربيع الأعلى</th><th>الحد الأقصى</th></tr></thead><tbody><tr id="q_row"></tr></tbody></table></div>
+      <div class="tbl"><table class="ctr" style="min-width:0"><thead><tr><th>الحد الأدنى</th><th>الربيع الأدنى</th><th>الوسيط</th><th>الربيع الأعلى</th><th>الحد الأقصى</th></tr></thead><tbody><tr id="q_row"></tr></tbody></table></div>
       <div id="q_out" class="verdict" aria-live="polite"></div>
       <p class="note">الحساب يرتب القيم ثم يحدد الربيعين بالاستكمال الخطي (طريقة QUARTILE.INC في Excel). النطاق المقبول هو ما بين الربيع الأدنى والأعلى. إذا وقعت النتيجة خارجه، يُعدَّل الربح عادة إلى الوسيط، وهذا ما تفترضه الحاسبة.</p>
     </div>
@@ -862,14 +865,15 @@ bind(['q_list','q_tp','q_rev'],()=>{
   $('q_row').innerHTML=[st.min,st.q1,st.med,st.q3,st.max].map(x=>'<td class="n">'+fmt(x,2)+'%</td>').join('');
   const lo=Math.min(st.min,tp)-1,hi=Math.max(st.max,tp)+1,pos=x=>((x-lo)/(hi-lo)*100);
   // RTL container: use right offset so larger values go left? keep numeric axis LTR visually
-  const L2=x=>'left:calc('+pos(x)+'% - 0px)';
-  let h='<div class="axis"></div><div class="iqr" style="left:'+pos(st.q1)+'%;width:'+(pos(st.q3)-pos(st.q1))+'%"></div>';
-  h+=st.s.map(x=>'<div class="dot" style="left:calc('+pos(x)+'% - 6px);transform:none"></div>').join('');
-  h+='<div class="med" style="left:calc('+pos(st.med)+'% - 1px);transform:none"></div>';
+  const L2=x=>'right:calc('+pos(x)+'% - 0px)';
+  let h='<div class="axis"></div><div class="iqr" style="right:'+pos(st.q1)+'%;width:'+(pos(st.q3)-pos(st.q1))+'%"></div>';
+  h+=st.s.map(x=>'<div class="dot" style="right:calc('+pos(x)+'% - 6px);transform:none"></div>').join('');
+  h+='<div class="med" style="right:calc('+pos(st.med)+'% - 1px);transform:none"></div>';
   const inR=tp>=st.q1&&tp<=st.q3;
-  h+='<div class="tp" style="left:calc('+pos(tp)+'% - 40px);width:80px;transform:none;color:'+(inR?'var(--good)':'var(--bad)')+'">'+fmt(tp,1)+'%<i></i></div>';
-  h+='<div class="lbl" style="left:calc('+pos(st.q1)+'% - 30px);width:60px;text-align:center;transform:none">Q1 '+fmt(st.q1,1)+'</div><div class="lbl" style="left:calc('+pos(st.q3)+'% - 30px);width:60px;text-align:center;transform:none">Q3 '+fmt(st.q3,1)+'</div>';
-  viz.innerHTML=h;viz.style.direction='ltr';
+  h+='<div class="tp" style="right:calc('+pos(tp)+'% - 40px);width:80px;transform:none;color:'+(inR?'var(--good)':'var(--bad)')+'">'+fmt(tp,1)+'%<i></i></div>';
+  h+='<div class="lbl" style="right:calc('+pos(st.med)+'% - 30px);width:60px;text-align:center;transform:none;top:-2px">الوسيط '+fmt(st.med,1)+'</div>';
+  h+='<div class="lbl" style="right:calc('+pos(st.q1)+'% - 30px);width:60px;text-align:center;transform:none">Q1 '+fmt(st.q1,1)+'</div><div class="lbl" style="right:calc('+pos(st.q3)+'% - 30px);width:60px;text-align:center;transform:none">Q3 '+fmt(st.q3,1)+'</div>';
+  viz.innerHTML=h;
   const rev=num('q_rev');
   if(inR)v(out,'ok','<b>هامش الطرف المختبر '+fmt(tp,1)+'% داخل النطاق الربيعي.</b><span class="small">المعاملة متوافقة مع مبدأ السعر المحايد ولا يلزم تعديل.</span>');
   else if(tp<st.q1)v(out,'no','<b>الهامش '+fmt(tp,1)+'% أقل من الربيع الأدنى '+fmt(st.q1,2)+'%.</b><span class="small">المكلف معرض لتعديل نتائجه. بالتعديل إلى الوسيط '+fmt(st.med,2)+'% يُضاف إلى الربح '+fmt(rev*(st.med-tp)/100)+' ريال.</span>');
